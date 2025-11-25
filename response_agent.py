@@ -4,6 +4,7 @@ from agent.utils.get_tools import tools
 from agent.client.groq_client import groq
 from agent.prompt.agent_prompt_basic import agent_prompt
 
+
 from config.config import settings
 # -----
 # Load response file
@@ -32,7 +33,14 @@ def ask(question:str):
 
 if __name__ == "__main__":
     import json
-
+    # ----------------------------
+    # Load schema on multiple questions, we only need to crawl, if schema is not available
+    from agent.utils.read_schema import load_schema
+    from agent.utils.crawl_schema import crawl_schema
+    schema = load_schema()
+    if not schema:
+        crawl_schema()
+    # -------------------------
     questions = [
         "Who are the customers in the database?",
         "What is the email of customer 'John Doe'?",
