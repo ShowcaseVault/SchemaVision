@@ -6,3 +6,6 @@ sqlalchemy
 # AGENT
 langchain
 langchain_groq
+# Graph Visualize
+networkx
+matplotlib
