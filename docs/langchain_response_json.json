@@ -1,0 +1,67 @@
+{
+  "messages": [
+    {
+      "type": "HumanMessage",
+      "content": "",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "id": ""
+    },
+    {
+      "type": "AIMessage",
+      "content": "",
+      "additional_kwargs": {
+        "tool_calls": [
+          {
+            "id": "",
+            "function": {
+              "name": "",
+              "arguments": {}
+            },
+            "type": ""
+          }
+        ]
+      },
+      "response_metadata": {
+        "token_usage": {
+          "completion_tokens": "",
+          "prompt_tokens": "",
+          "total_tokens": "",
+          "completion_time": "",
+          "completion_tokens_details": "",
+          "prompt_time": "",
+          "prompt_tokens_details": "",
+          "queue_time": "",
+          "total_time": ""
+        },
+        "model_name": "",
+        "system_fingerprint": "",
+        "service_tier": "",
+        "finish_reason": "",
+        "logprobs": "",
+        "model_provider": ""
+      },
+      "id": "",
+      "tool_calls": [
+        {
+          "name": "",
+          "args": {},
+          "id": "",
+          "type": ""
+        }
+      ],
+      "usage_metadata": {
+        "input_tokens": "",
+        "output_tokens": "",
+        "total_tokens": ""
+      }
+    },
+    {
+      "type": "ToolMessage",
+      "content": "",
+      "name": "",
+      "id": "",
+      "tool_call_id": ""
+    }
+  ]
+}

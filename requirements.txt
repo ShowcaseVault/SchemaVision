@@ -1,0 +1,8 @@
+# DOTENV
+python-dotenv
+# DATABASE
+psycopg2
+sqlalchemy
+# AGENT
+langchain
+langchain_groq

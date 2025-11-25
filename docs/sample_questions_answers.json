@@ -1,0 +1,65 @@
+[
+    {
+        "question": "Who are the customers in the database?",
+        "response": "SELECT * FROM customer;",
+        "usage": {
+            "input_tokens": 2844,
+            "output_tokens": 6,
+            "total_tokens": 2850
+        }
+    },
+    {
+        "question": "What is the email of customer 'John Doe'?",
+        "response": "SELECT email FROM customer WHERE first_name = 'John' AND last_name = 'Doe'",
+        "usage": {
+            "input_tokens": 1088,
+            "output_tokens": 20,
+            "total_tokens": 1108
+        }
+    },
+    {
+        "question": "How many invoices has customer 'Jane Smith' made?",
+        "response": "SELECT COUNT(*) FROM invoices WHERE customer_name = 'Jane Smith'",
+        "usage": {
+            "input_tokens": 405,
+            "output_tokens": 14,
+            "total_tokens": 419
+        }
+    },
+    {
+        "question": "Which genre has the most tracks?",
+        "response": "SELECT T2.name FROM track AS T1 INNER JOIN genre AS T2 ON T1.genre_id = T2.genre_id GROUP BY T2.name ORDER BY COUNT(T2.name) DESC LIMIT 1",
+        "usage": {
+            "input_tokens": 1671,
+            "output_tokens": 42,
+            "total_tokens": 1713
+        }
+    },
+    {
+        "question": "How much revenue has each artist generated?",
+        "response": "SELECT artist_name, SUM(revenue) FROM artist_revenue GROUP BY artist_name",
+        "usage": {
+            "input_tokens": 402,
+            "output_tokens": 17,
+            "total_tokens": 419
+        }
+    },
+    {
+        "question": "Who are the top 5 customers who spent the most?",
+        "response": "SELECT customer_id, first_name, last_name, SUM(total) AS total_spent\nFROM customer\nJOIN invoice ON customer.customer_id = invoice.customer_id\nGROUP BY customer.customer_id, first_name, last_name\nORDER BY total_spent DESC\nLIMIT 5;",
+        "usage": {
+            "input_tokens": 2555,
+            "output_tokens": 56,
+            "total_tokens": 2611
+        }
+    },
+    {
+        "question": "What is the total revenue per month in 2009?",
+        "response": "SELECT SUM(total) FROM invoice WHERE invoice_date LIKE '%/%/09'",
+        "usage": {
+            "input_tokens": 2848,
+            "output_tokens": 16,
+            "total_tokens": 2864
+        }
+    }
+]

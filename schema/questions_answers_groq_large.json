@@ -1,0 +1,65 @@
+[
+    {
+        "question": "Who are the customers in the database?",
+        "response": "SELECT * FROM customer;",
+        "usage": {
+            "input_tokens": 3314,
+            "output_tokens": 6,
+            "total_tokens": 3320
+        }
+    },
+    {
+        "question": "What is the email of customer 'John Doe'?",
+        "response": "SELECT email FROM customer WHERE first_name = 'John' AND last_name = 'Doe';",
+        "usage": {
+            "input_tokens": 3316,
+            "output_tokens": 19,
+            "total_tokens": 3335
+        }
+    },
+    {
+        "question": "How many invoices has customer 'Jane Smith' made?",
+        "response": "SELECT COUNT(T1.invoice_id) FROM invoice AS T1 INNER JOIN customer AS T2 ON T1.customer_id = T2.customer_id WHERE T2.first_name = 'Jane' AND T2.last_name = 'Smith'",
+        "usage": {
+            "input_tokens": 3317,
+            "output_tokens": 47,
+            "total_tokens": 3364
+        }
+    },
+    {
+        "question": "Which genre has the most tracks?",
+        "response": "SELECT T2.name FROM track AS T1 INNER JOIN genre AS T2 ON T1.genre_id = T2.genre_id GROUP BY T2.name ORDER BY COUNT(T1.track_id) DESC LIMIT 1",
+        "usage": {
+            "input_tokens": 3313,
+            "output_tokens": 45,
+            "total_tokens": 3358
+        }
+    },
+    {
+        "question": "How much revenue has each artist generated?",
+        "response": "SELECT \n  a.name, \n  SUM(il.unit_price * il.quantity) AS total_revenue\nFROM \n  artist a\n  JOIN album al ON a.artist_id = al.artist_id\n  JOIN track t ON al.album_id = t.album_id\n  JOIN invoice_line il ON t.track_id = il.track_id\nGROUP BY \n  a.name;",
+        "usage": {
+            "input_tokens": 3314,
+            "output_tokens": 76,
+            "total_tokens": 3390
+        }
+    },
+    {
+        "question": "Who are the top 5 customers who spent the most?",
+        "response": "SELECT c.customer_id, c.first_name, c.last_name, SUM(i.total) AS total_spent\nFROM customer c\nJOIN invoice i ON c.customer_id = i.customer_id\nGROUP BY c.customer_id, c.first_name, c.last_name\nORDER BY total_spent DESC\nLIMIT 5;",
+        "usage": {
+            "input_tokens": 3318,
+            "output_tokens": 64,
+            "total_tokens": 3382
+        }
+    },
+    {
+        "question": "What is the total revenue per month in 2009?",
+        "response": "SELECT STRFTIME('%Y-%m', invoice_date) AS month, SUM(total) AS total_revenue FROM invoice WHERE STRFTIME('%Y', invoice_date) = '2009' GROUP BY month;",
+        "usage": {
+            "input_tokens": 3318,
+            "output_tokens": 44,
+            "total_tokens": 3362
+        }
+    }
+]

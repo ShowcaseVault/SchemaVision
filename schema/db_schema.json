@@ -1,0 +1,477 @@
+{
+    "tables": {
+        "artist": [
+            "artist_id",
+            "name"
+        ],
+        "album": [
+            "album_id",
+            "title",
+            "artist_id"
+        ],
+        "employee": [
+            "employee_id",
+            "last_name",
+            "first_name",
+            "title",
+            "reports_to",
+            "birth_date",
+            "hire_date",
+            "address",
+            "city",
+            "state",
+            "country",
+            "postal_code",
+            "phone",
+            "fax",
+            "email"
+        ],
+        "customer": [
+            "customer_id",
+            "first_name",
+            "last_name",
+            "company",
+            "address",
+            "city",
+            "state",
+            "country",
+            "postal_code",
+            "phone",
+            "fax",
+            "email",
+            "support_rep_id"
+        ],
+        "invoice": [
+            "invoice_id",
+            "customer_id",
+            "invoice_date",
+            "billing_address",
+            "billing_city",
+            "billing_state",
+            "billing_country",
+            "billing_postal_code",
+            "total"
+        ],
+        "invoice_line": [
+            "invoice_line_id",
+            "invoice_id",
+            "track_id",
+            "unit_price",
+            "quantity"
+        ],
+        "track": [
+            "track_id",
+            "name",
+            "album_id",
+            "media_type_id",
+            "genre_id",
+            "composer",
+            "milliseconds",
+            "bytes",
+            "unit_price"
+        ],
+        "playlist": [
+            "playlist_id",
+            "name"
+        ],
+        "playlist_track": [
+            "playlist_id",
+            "track_id"
+        ],
+        "genre": [
+            "genre_id",
+            "name"
+        ],
+        "media_type": [
+            "media_type_id",
+            "name"
+        ]
+    },
+    "relationships": [
+        {
+            "from": "album",
+            "to": "artist",
+            "via": "artist_id"
+        },
+        {
+            "from": "employee",
+            "to": "employee",
+            "via": "reports_to"
+        },
+        {
+            "from": "customer",
+            "to": "employee",
+            "via": "support_rep_id"
+        },
+        {
+            "from": "invoice",
+            "to": "customer",
+            "via": "customer_id"
+        },
+        {
+            "from": "invoice_line",
+            "to": "invoice",
+            "via": "invoice_id"
+        },
+        {
+            "from": "invoice_line",
+            "to": "track",
+            "via": "track_id"
+        },
+        {
+            "from": "track",
+            "to": "album",
+            "via": "album_id"
+        },
+        {
+            "from": "track",
+            "to": "genre",
+            "via": "genre_id"
+        },
+        {
+            "from": "track",
+            "to": "media_type",
+            "via": "media_type_id"
+        },
+        {
+            "from": "playlist_track",
+            "to": "playlist",
+            "via": "playlist_id"
+        },
+        {
+            "from": "playlist_track",
+            "to": "track",
+            "via": "track_id"
+        },
+        {
+            "from": "album",
+            "to": "artist",
+            "via": "artist_id"
+        },
+        {
+            "from": "employee",
+            "to": "employee",
+            "via": "reports_to"
+        },
+        {
+            "from": "customer",
+            "to": "employee",
+            "via": "support_rep_id"
+        },
+        {
+            "from": "invoice",
+            "to": "customer",
+            "via": "customer_id"
+        },
+        {
+            "from": "invoice_line",
+            "to": "invoice",
+            "via": "invoice_id"
+        },
+        {
+            "from": "invoice_line",
+            "to": "track",
+            "via": "track_id"
+        },
+        {
+            "from": "track",
+            "to": "album",
+            "via": "album_id"
+        },
+        {
+            "from": "track",
+            "to": "genre",
+            "via": "genre_id"
+        },
+        {
+            "from": "track",
+            "to": "media_type",
+            "via": "media_type_id"
+        },
+        {
+            "from": "playlist_track",
+            "to": "playlist",
+            "via": "playlist_id"
+        },
+        {
+            "from": "playlist_track",
+            "to": "track",
+            "via": "track_id"
+        },
+        {
+            "from": "album",
+            "to": "artist",
+            "via": "artist_id"
+        },
+        {
+            "from": "employee",
+            "to": "employee",
+            "via": "reports_to"
+        },
+        {
+            "from": "customer",
+            "to": "employee",
+            "via": "support_rep_id"
+        },
+        {
+            "from": "invoice",
+            "to": "customer",
+            "via": "customer_id"
+        },
+        {
+            "from": "invoice_line",
+            "to": "invoice",
+            "via": "invoice_id"
+        },
+        {
+            "from": "invoice_line",
+            "to": "track",
+            "via": "track_id"
+        },
+        {
+            "from": "track",
+            "to": "album",
+            "via": "album_id"
+        },
+        {
+            "from": "track",
+            "to": "genre",
+            "via": "genre_id"
+        },
+        {
+            "from": "track",
+            "to": "media_type",
+            "via": "media_type_id"
+        },
+        {
+            "from": "playlist_track",
+            "to": "playlist",
+            "via": "playlist_id"
+        },
+        {
+            "from": "playlist_track",
+            "to": "track",
+            "via": "track_id"
+        },
+        {
+            "from": "album",
+            "to": "artist",
+            "via": "artist_id"
+        },
+        {
+            "from": "employee",
+            "to": "employee",
+            "via": "reports_to"
+        },
+        {
+            "from": "customer",
+            "to": "employee",
+            "via": "support_rep_id"
+        },
+        {
+            "from": "invoice",
+            "to": "customer",
+            "via": "customer_id"
+        },
+        {
+            "from": "invoice_line",
+            "to": "invoice",
+            "via": "invoice_id"
+        },
+        {
+            "from": "invoice_line",
+            "to": "track",
+            "via": "track_id"
+        },
+        {
+            "from": "track",
+            "to": "album",
+            "via": "album_id"
+        },
+        {
+            "from": "track",
+            "to": "genre",
+            "via": "genre_id"
+        },
+        {
+            "from": "track",
+            "to": "media_type",
+            "via": "media_type_id"
+        },
+        {
+            "from": "playlist_track",
+            "to": "playlist",
+            "via": "playlist_id"
+        },
+        {
+            "from": "playlist_track",
+            "to": "track",
+            "via": "track_id"
+        },
+        {
+            "from": "album",
+            "to": "artist",
+            "via": "artist_id"
+        },
+        {
+            "from": "employee",
+            "to": "employee",
+            "via": "reports_to"
+        },
+        {
+            "from": "customer",
+            "to": "employee",
+            "via": "support_rep_id"
+        },
+        {
+            "from": "invoice",
+            "to": "customer",
+            "via": "customer_id"
+        },
+        {
+            "from": "invoice_line",
+            "to": "invoice",
+            "via": "invoice_id"
+        },
+        {
+            "from": "invoice_line",
+            "to": "track",
+            "via": "track_id"
+        },
+        {
+            "from": "track",
+            "to": "album",
+            "via": "album_id"
+        },
+        {
+            "from": "track",
+            "to": "genre",
+            "via": "genre_id"
+        },
+        {
+            "from": "track",
+            "to": "media_type",
+            "via": "media_type_id"
+        },
+        {
+            "from": "playlist_track",
+            "to": "playlist",
+            "via": "playlist_id"
+        },
+        {
+            "from": "playlist_track",
+            "to": "track",
+            "via": "track_id"
+        },
+        {
+            "from": "album",
+            "to": "artist",
+            "via": "artist_id"
+        },
+        {
+            "from": "employee",
+            "to": "employee",
+            "via": "reports_to"
+        },
+        {
+            "from": "customer",
+            "to": "employee",
+            "via": "support_rep_id"
+        },
+        {
+            "from": "invoice",
+            "to": "customer",
+            "via": "customer_id"
+        },
+        {
+            "from": "invoice_line",
+            "to": "invoice",
+            "via": "invoice_id"
+        },
+        {
+            "from": "invoice_line",
+            "to": "track",
+            "via": "track_id"
+        },
+        {
+            "from": "track",
+            "to": "album",
+            "via": "album_id"
+        },
+        {
+            "from": "track",
+            "to": "genre",
+            "via": "genre_id"
+        },
+        {
+            "from": "track",
+            "to": "media_type",
+            "via": "media_type_id"
+        },
+        {
+            "from": "playlist_track",
+            "to": "playlist",
+            "via": "playlist_id"
+        },
+        {
+            "from": "playlist_track",
+            "to": "track",
+            "via": "track_id"
+        },
+        {
+            "from": "album",
+            "to": "artist",
+            "via": "artist_id"
+        },
+        {
+            "from": "employee",
+            "to": "employee",
+            "via": "reports_to"
+        },
+        {
+            "from": "customer",
+            "to": "employee",
+            "via": "support_rep_id"
+        },
+        {
+            "from": "invoice",
+            "to": "customer",
+            "via": "customer_id"
+        },
+        {
+            "from": "invoice_line",
+            "to": "invoice",
+            "via": "invoice_id"
+        },
+        {
+            "from": "invoice_line",
+            "to": "track",
+            "via": "track_id"
+        },
+        {
+            "from": "track",
+            "to": "album",
+            "via": "album_id"
+        },
+        {
+            "from": "track",
+            "to": "genre",
+            "via": "genre_id"
+        },
+        {
+            "from": "track",
+            "to": "media_type",
+            "via": "media_type_id"
+        },
+        {
+            "from": "playlist_track",
+            "to": "playlist",
+            "via": "playlist_id"
+        },
+        {
+            "from": "playlist_track",
+            "to": "track",
+            "via": "track_id"
+        }
+    ]
+}
